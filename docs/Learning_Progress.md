@@ -16,28 +16,57 @@ The primary objective is to understand **why** transformations are required befo
 
 ### Completed
 
-* SQL Fundamentals
-* Aggregate Functions
-* GROUP BY
-* HAVING
-* CASE
-* INNER JOIN
-* LEFT JOIN
+- SQL Fundamentals
+- Aggregate Functions
+- GROUP BY
+- HAVING
+- CASE
+- INNER JOIN
+- LEFT JOIN
+- FULL OUTER JOIN
+- UNION
+- UNION ALL
 
 ### Upcoming
 
-* RIGHT JOIN
-* FULL OUTER JOIN
-* SELF JOIN
-* CROSS JOIN
-* UNION
-* UNION ALL
-* CTE
-* Subqueries
-* Correlated Subqueries
-* Window Functions
+- CTE
+- Subqueries
+- Correlated Subqueries
+- Window Functions
+- SELF JOIN
+- CROSS JOIN
+
+> **Note:** RIGHT JOIN was intentionally skipped after understanding LEFT JOIN thoroughly, as both concepts are logically equivalent by changing the driving table. The project follows production-oriented practices where LEFT JOIN is generally preferred for readability and maintainability.
 
 Business scenarios are presented as Jira tickets so that solutions are driven by business requirements instead of SQL syntax.
+
+---
+
+# Learning Methodology
+
+Every ticket in this project follows the same workflow:
+
+```
+Jira Ticket
+        ↓
+Requirement Analysis
+        ↓
+Business Entity
+        ↓
+Output Grain
+        ↓
+Column Ownership
+        ↓
+Requirement Validation
+        ↓
+Solution Design
+        ↓
+SQL
+        ↓
+GitHub PR Review
+```
+
+The objective is to think like a Data Engineer before writing SQL.
 
 ---
 
@@ -59,13 +88,13 @@ Silver (SQL)
 
 The Silver layer will perform transformations such as:
 
-* Data quality validation
-* NULL handling
-* Data standardization
-* Business rule implementation
-* Deduplication
-* Data enrichment
-* Data cleansing
+- Data quality validation
+- NULL handling
+- Data standardization
+- Business rule implementation
+- Deduplication
+- Data enrichment
+- Data cleansing
 
 ---
 
@@ -84,12 +113,12 @@ Gold tables will support analytics and reporting use cases.
 
 Examples include:
 
-* Customer Sales Summary
-* Product Performance
-* Category Sales
-* City Sales
-* Customer Retention
-* Inventory Status
+- Customer Sales Summary
+- Product Performance
+- Category Sales
+- City Sales
+- Customer Retention
+- Inventory Status
 
 ---
 
@@ -113,7 +142,7 @@ gold_customer_sales_pyspark
 
 Both implementations will be validated to ensure they produce identical business results.
 
-After validation, PySpark will be treated as the production implementation.
+After validation, PySpark will become the production implementation.
 
 ---
 
@@ -121,12 +150,12 @@ After validation, PySpark will be treated as the production implementation.
 
 The project will then be enhanced using Delta Lake features, including:
 
-* MERGE
-* UPDATE
-* DELETE
-* Time Travel
-* Optimization
-* ACID Transactions
+- MERGE
+- UPDATE
+- DELETE
+- Time Travel
+- Optimization
+- ACID Transactions
 
 ---
 
@@ -134,12 +163,12 @@ The project will then be enhanced using Delta Lake features, including:
 
 The project will evolve into a production-style solution by adding:
 
-* Incremental processing
-* Parameterized notebooks
-* Logging
-* Audit columns
-* Error handling
-* Databricks Workflows
+- Incremental processing
+- Parameterized notebooks
+- Logging
+- Audit columns
+- Error handling
+- Databricks Workflows
 
 ---
 
@@ -147,8 +176,8 @@ The project will evolve into a production-style solution by adding:
 
 Finally, the project will be extended using:
 
-* Azure Data Factory
-* Microsoft Fabric
+- Azure Data Factory
+- Microsoft Fabric
 
 to build an end-to-end cloud-based Retail Data Engineering solution.
 
@@ -165,7 +194,7 @@ customers
 orders
 ```
 
-As business requirements grow, additional source systems will be introduced.
+Additional datasets will be introduced only when required by realistic business scenarios.
 
 Planned datasets include:
 
@@ -180,7 +209,7 @@ employees
 suppliers
 ```
 
-New datasets will only be introduced when required by a realistic business scenario.
+The project will intentionally evolve from two source tables into a realistic retail data platform instead of introducing all datasets at the beginning.
 
 ---
 
@@ -194,6 +223,8 @@ Business Requirement
 Business Metric
         ↓
 Expected Output
+        ↓
+Requirement Analysis
         ↓
 Solution Design
         ↓
@@ -212,14 +243,14 @@ The focus is on solving business problems rather than memorizing syntax.
 
 By the end of this project, the repository will contain:
 
-* Realistic Retail datasets
-* Bronze, Silver, and Gold architecture
-* SQL implementations
-* PySpark implementations
-* Delta Lake features
-* Production-style pipelines
-* Databricks Workflows
-* Azure Data Factory integration
-* Microsoft Fabric integration
+- Realistic Retail datasets
+- Bronze, Silver, and Gold architecture
+- SQL implementations
+- PySpark implementations
+- Delta Lake features
+- Production-style pipelines
+- Databricks Workflows
+- Azure Data Factory integration
+- Microsoft Fabric integration
 
 The outcome will be a complete, interview-ready Retail Data Engineering project built incrementally from first principles.
