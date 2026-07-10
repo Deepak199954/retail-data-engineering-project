@@ -26,12 +26,19 @@ The primary objective is to understand **why** transformations are required befo
 - FULL OUTER JOIN
 - UNION
 - UNION ALL
+- Common Table Expressions (CTE)
+- Scalar Subqueries
+- Multiple-row Subqueries (`IN`)
+
+### In Progress
+
+- Correlated Subqueries
+- EXISTS
+- ANY
+- ALL
 
 ### Upcoming
 
-- CTE
-- Subqueries
-- Correlated Subqueries
 - Window Functions
 - SELF JOIN
 - CROSS JOIN
@@ -46,7 +53,7 @@ Business scenarios are presented as Jira tickets so that solutions are driven by
 
 Every ticket in this project follows the same workflow:
 
-```
+```text
 Jira Ticket
         ↓
 Requirement Analysis
@@ -64,9 +71,86 @@ Solution Design
 SQL
         ↓
 GitHub PR Review
+        ↓
+Production Discussion
 ```
 
 The objective is to think like a Data Engineer before writing SQL.
+
+Every solution is reviewed not only for SQL correctness but also for:
+
+- Business logic
+- Output grain
+- Readability
+- Maintainability
+- Production suitability
+- Alternative approaches
+
+---
+
+# SQL Decision Framework *(Built During Learning)*
+
+Rather than memorizing syntax, SQL concepts are chosen based on business requirements.
+
+```text
+Business Requirement
+        │
+        ▼
+Need to combine datasets?
+        │
+        ▼
+JOIN
+        │
+        ▼
+Need business summary?
+        │
+        ▼
+GROUP BY
+        │
+        ▼
+Need to filter aggregated data?
+        │
+        ▼
+HAVING
+        │
+        ▼
+Need conditional business logic?
+        │
+        ▼
+CASE
+        │
+        ▼
+Need an intermediate business result?
+        │
+        ▼
+CTE
+        │
+        ▼
+Need one calculated value?
+        │
+        ▼
+Scalar Subquery
+        │
+        ▼
+Need multiple values?
+        │
+        ▼
+IN (Multiple-row Subquery)
+        │
+        ▼
+Need row-specific calculation?
+        │
+        ▼
+Correlated Subquery
+        │
+        ▼
+Need to check only whether related data exists?
+        │
+        ▼
+EXISTS
+```
+
+This decision framework will continue evolving as new SQL concepts are learned.
 
 ---
 
@@ -76,7 +160,7 @@ The objective is to think like a Data Engineer before writing SQL.
 
 Once SQL concepts are completed, the first production-style pipeline will be built.
 
-```
+```text
 Landing
     │
     ▼
@@ -102,7 +186,7 @@ The Silver layer will perform transformations such as:
 
 The cleaned Silver data will be transformed into business-ready Gold tables.
 
-```
+```text
 Silver
     │
     ▼
@@ -132,7 +216,7 @@ Temporary learning tables may be maintained during this phase for comparison and
 
 Example:
 
-```
+```text
 silver_orders_sql
 silver_orders_pyspark
 
@@ -189,7 +273,7 @@ The project intentionally starts with only two source tables to simplify learnin
 
 ## Current Source Tables
 
-```
+```text
 customers
 orders
 ```
@@ -198,7 +282,7 @@ Additional datasets will be introduced only when required by realistic business 
 
 Planned datasets include:
 
-```
+```text
 customers
 orders
 products
@@ -217,25 +301,35 @@ The project will intentionally evolve from two source tables into a realistic re
 
 Every concept in this project follows the same approach:
 
-```
+```text
 Business Requirement
         ↓
-Business Metric
-        ↓
-Expected Output
-        ↓
 Requirement Analysis
+        ↓
+Business Entity
+        ↓
+Output Grain
+        ↓
+Column Ownership
+        ↓
+Business Metric
         ↓
 Solution Design
         ↓
 SQL
+        ↓
+PR Review
+        ↓
+Production Alternative
         ↓
 PySpark
         ↓
 Production Pipeline
 ```
 
-The focus is on solving business problems rather than memorizing syntax.
+The focus is on solving business problems rather than memorizing SQL syntax.
+
+The same business problem is often solved using multiple SQL techniques to understand trade-offs between readability, maintainability, and performance.
 
 ---
 
@@ -254,3 +348,5 @@ By the end of this project, the repository will contain:
 - Microsoft Fabric integration
 
 The outcome will be a complete, interview-ready Retail Data Engineering project built incrementally from first principles.
+
+The emphasis throughout the project is not simply learning SQL syntax, but developing the ability to analyze business requirements, evaluate multiple technical solutions, and choose the most appropriate implementation from both an interview and production perspective.
