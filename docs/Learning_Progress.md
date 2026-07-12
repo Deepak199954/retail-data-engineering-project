@@ -29,26 +29,38 @@ The primary objective is to understand **why** transformations are required befo
 - Common Table Expressions (CTE)
 - Scalar Subqueries
 - Multiple-row Subqueries (`IN`)
-
-### In Progress
-
 - Correlated Subqueries
 - EXISTS
-- ANY
-- ALL
+- ANY / ALL *(Conceptual — Databricks alternative using MIN/MAX discussed)*
+- Window Functions
+  - Ranking Functions
+    - ROW_NUMBER()
+    - RANK()
+    - DENSE_RANK()
+  - Value Functions
+    - LAG()
+    - LEAD()
+    - FIRST_VALUE()
+    - LAST_VALUE()
+  - Aggregate Window Functions
+    - SUM() OVER()
+    - AVG() OVER()
+    - MIN() OVER()
+    - MAX() OVER()
+  - Window Frames
+    - Default Frame
+    - Explicit Frames (`ROWS BETWEEN ...`)
 
 ### Upcoming
 
-- Window Functions
-- SELF JOIN
 - CROSS JOIN
+- SELF JOIN *(Deferred until the Employees dataset is introduced naturally)*
 
-> **Note:** RIGHT JOIN was intentionally skipped after understanding LEFT JOIN thoroughly, as both concepts are logically equivalent by changing the driving table. The project follows production-oriented practices where LEFT JOIN is generally preferred for readability and maintainability.
+> **Note 1:** RIGHT JOIN was intentionally skipped after understanding LEFT JOIN thoroughly, as both concepts are logically equivalent by changing the driving table.
 
-Business scenarios are presented as Jira tickets so that solutions are driven by business requirements instead of SQL syntax.
+> **Note 2:** SELF JOIN has been intentionally deferred instead of introducing artificial columns into the current datasets. It will be learned naturally when the `employees` dataset introduces hierarchical relationships (`employee → manager`).
 
----
-
+Business scenarios continue to be presented as Jira tickets so that solutions are driven by business requirements instead of SQL syntax.
 # Learning Methodology
 
 Every ticket in this project follows the same workflow:
@@ -73,6 +85,8 @@ SQL
 GitHub PR Review
         ↓
 Production Discussion
+        ↓
+Spark Execution Discussion
 ```
 
 The objective is to think like a Data Engineer before writing SQL.
@@ -148,6 +162,32 @@ Need to check only whether related data exists?
         │
         ▼
 EXISTS
+        │
+        ▼
+Need calculations while preserving every row?
+        │
+        ▼
+WINDOW FUNCTIONS
+        │
+        ├── Need row numbering?
+        │       ▼
+        │   ROW_NUMBER()
+        │
+        ├── Need ranking?
+        │       ▼
+        │   RANK() / DENSE_RANK()
+        │
+        ├── Need previous / next row?
+        │       ▼
+        │   LAG() / LEAD()
+        │
+        ├── Need first / last value?
+        │       ▼
+        │   FIRST_VALUE() / LAST_VALUE()
+        │
+        └── Need running or cumulative metrics?
+                ▼
+        SUM() / AVG() / MIN() / MAX() OVER()
 ```
 
 This decision framework will continue evolving as new SQL concepts are learned.
@@ -320,11 +360,11 @@ SQL
         ↓
 PR Review
         ↓
-Production Alternative
+Production Discussion
+        ↓
+Spark Execution Discussion
         ↓
 PySpark
-        ↓
-Production Pipeline
 ```
 
 The focus is on solving business problems rather than memorizing SQL syntax.
@@ -332,6 +372,44 @@ The focus is on solving business problems rather than memorizing SQL syntax.
 The same business problem is often solved using multiple SQL techniques to understand trade-offs between readability, maintainability, and performance.
 
 ---
+---
+
+# Window Function Learning Summary
+
+Window Functions were learned using a business-first approach instead of individual syntax.
+
+The progression followed was:
+
+```text
+Business Requirement
+        ↓
+Need to preserve every row?
+        ↓
+OVER()
+        ↓
+PARTITION BY
+        ↓
+ORDER BY
+        ↓
+WINDOW FRAME
+        ↓
+Choose the appropriate function
+```
+
+Covered categories include:
+
+- Ranking Functions
+- Value Functions
+- Aggregate Window Functions
+- Default Window Frames
+- Explicit Window Frames
+
+Every Window Function solution concluded with:
+
+- GitHub PR Review
+- Production discussion
+- Spark execution discussion
+- Comparison with alternative SQL approaches
 
 # Project Goal
 
