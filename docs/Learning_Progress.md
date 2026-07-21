@@ -12,7 +12,7 @@ The primary objective is to understand **why** transformations are required befo
 
 # Current Learning Phase
 
-## Phase 1 — SQL Foundations *(In Progress)*
+## Phase 1 — SQL Querying Foundations *(Completed)*
 
 ### Completed
 
@@ -50,15 +50,17 @@ The primary objective is to understand **why** transformations are required befo
   - Window Frames
     - Default Frame
     - Explicit Frames (`ROWS BETWEEN ...`)
+- CROSS JOIN
 
 ### Upcoming
 
-- CROSS JOIN
 - SELF JOIN *(Deferred until the Employees dataset is introduced naturally)*
 
 > **Note 1:** RIGHT JOIN was intentionally skipped after understanding LEFT JOIN thoroughly, as both concepts are logically equivalent by changing the driving table.
 
 > **Note 2:** SELF JOIN has been intentionally deferred instead of introducing artificial columns into the current datasets. It will be learned naturally when the `employees` dataset introduces hierarchical relationships (`employee → manager`).
+
+> **Note 3:** Concepts such as Views, CTAS, MERGE, UPDATE, DELETE, and Delta Lake features are intentionally deferred until later project phases where real business scenarios require them, instead of learning them in isolation.
 
 Business scenarios continue to be presented as Jira tickets so that solutions are driven by business requirements instead of SQL syntax.
 # Learning Methodology
@@ -188,6 +190,19 @@ WINDOW FUNCTIONS
         └── Need running or cumulative metrics?
                 ▼
         SUM() / AVG() / MIN() / MAX() OVER()
+		                │
+                ▼
+Need reusable business logic?
+                │
+                ▼
+Views (Phase 2)
+
+                │
+                ▼
+Need incremental updates?
+                │
+                ▼
+MERGE (Phase 5)
 ```
 
 This decision framework will continue evolving as new SQL concepts are learned.
@@ -212,6 +227,8 @@ Silver (SQL)
 
 The Silver layer will perform transformations such as:
 
+- CREATE TABLE AS SELECT (CTAS)
+- Views
 - Data quality validation
 - NULL handling
 - Data standardization
@@ -274,12 +291,17 @@ After validation, PySpark will become the production implementation.
 
 The project will then be enhanced using Delta Lake features, including:
 
+## Phase 5 — Delta Lake
+
+The project will then be enhanced using Delta Lake features, including:
+
 - MERGE
 - UPDATE
 - DELETE
 - Time Travel
 - Optimization
 - ACID Transactions
+- Slowly Changing Dimensions (SCD Type 1 & Type 2)
 
 ---
 
@@ -371,6 +393,8 @@ The focus is on solving business problems rather than memorizing SQL syntax.
 
 The same business problem is often solved using multiple SQL techniques to understand trade-offs between readability, maintainability, and performance.
 
+Concepts are intentionally introduced only when a realistic business requirement demands them, ensuring that technical knowledge is always connected to practical implementation.
+
 ---
 ---
 
@@ -406,10 +430,22 @@ Covered categories include:
 
 Every Window Function solution concluded with:
 
+- Requirement validation
 - GitHub PR Review
 - Production discussion
 - Spark execution discussion
-- Comparison with alternative SQL approaches
+- Alternative SQL approaches
+- Performance and scalability considerations
+
+---
+
+# Milestone Achieved
+
+✅ Phase 1 — SQL Querying Foundations Completed
+
+This milestone established the analytical SQL foundation required for production data engineering.
+
+The next phase transitions from learning SQL syntax to building a complete Retail Data Engineering project using a Bronze → Silver → Gold architecture.
 
 # Project Goal
 

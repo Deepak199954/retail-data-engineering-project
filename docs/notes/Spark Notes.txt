@@ -1,0 +1,1519 @@
+# Spark Fundamentals Handbook
+
+---
+
+# Chapter 1 — Why Spark?
+
+## Problem
+
+Traditional processing systems process data sequentially.
+
+Example:
+
+10 GB File
+
+↓
+
+1 CPU
+
+↓
+
+Slow Processing
+
+As data grows from GB to TB and PB, processing on a single machine becomes impractical.
+
+---
+
+## Spark Solution
+
+Spark divides data into smaller logical partitions and processes them in parallel across multiple machines.
+
+Example:
+
+10 GB File
+
+↓
+
+50 Partitions
+
+↓
+
+50 Tasks
+
+↓
+
+Multiple Executors
+
+↓
+
+Parallel Processing
+
+---
+
+## Primary Goal of Spark
+
+Spark tries to maximize:
+
+- Parallel Processing
+- Resource Utilization
+
+while minimizing:
+
+- Data Movement (Shuffle)
+- Scheduling Overhead
+- Disk I/O
+
+---
+
+# Chapter 2 — Spark Architecture
+
+```
+                        USER
+                         │
+                  PySpark Program
+                         │
+                         ▼
+                Spark Application
+                         │
+                         ▼
+                      Driver
+                         │
+      ┌──────────────────┼──────────────────┐
+      ▼                  ▼                  ▼
+Read Metadata     Determine Input     Build Logical Plan
+                  Partitions
+      └──────────────────┼──────────────────┘
+                         │
+                         ▼
+                 Action Encountered?
+               ┌─────────┴──────────┐
+               │                    │
+              No                   Yes
+               │                    │
+      Continue Planning       Create Job
+                                   │
+                                   ▼
+                        Build Physical Plan
+                                   │
+                                   ▼
+                         Split Job into Stages
+                                   │
+               ┌───────────────────┴───────────────────┐
+               ▼                                       ▼
+      Stage 1 (Input Partitions)          Stage 2 (Shuffle Partitions)
+               │                                       │
+               ▼                                       ▼
+      One Task per Partition              One Task per Partition
+               │                                       │
+               └──────────────────┬────────────────────┘
+                                  ▼
+                      Request Cluster Resources
+                                  │
+                                  ▼
+                          Cluster Manager
+                                  │
+                    Allocate Worker Nodes
+                                  │
+        ┌─────────────────────────┼────────────────────────┐
+        ▼                         ▼                        ▼
+ Worker Node               Worker Node             Worker Node
+        │                         │                        │
+    Executor                  Executor                 Executor
+        │                         │                        │
+ CPU Cores + Memory       CPU Cores + Memory     CPU Cores + Memory
+        │                         │                        │
+        └──────────── Driver Schedules Tasks ──────────────┘
+                                  │
+                                  ▼
+                      Executors Process Partitions
+                                  │
+                                  ▼
+                         Stage Completed?
+                        │                 │
+                       No                Yes
+                        │                 │
+                        ▼                 ▼
+                 Retry Failed Task     Next Stage
+                                             │
+                                             ▼
+                                        Final Result
+```
+
+---
+
+# Chapter 3 — Spark Application
+
+## What is it?
+
+A Spark Application is one execution of a Spark program.
+
+---
+
+## Who creates it?
+
+Spark automatically creates it when a Spark program starts.
+
+---
+
+## Who decides it?
+
+The user starts it by running the notebook or application.
+
+---
+
+## Why?
+
+It represents one complete execution lifecycle.
+
+---
+
+## Relationship
+
+One Application contains:
+
+- One Driver
+- Multiple Jobs
+- Multiple Executors
+
+---
+
+# Chapter 4 — Driver
+
+## What?
+
+Brain of Spark.
+
+---
+
+## Responsibilities
+
+- Reads PySpark code
+- Reads metadata
+- Builds Logical Plan
+- Creates Jobs
+- Creates Tasks
+- Schedules Tasks
+- Tracks execution
+
+---
+
+## Does Driver process data?
+
+No.
+
+Executors process data.
+
+---
+
+# Chapter 5 — Cluster Manager
+
+## What?
+
+Resource manager responsible for creating executors.
+
+Examples:
+
+- Databricks
+- YARN
+- Kubernetes
+- Standalone Cluster
+
+---
+
+## Responsibilities
+
+- Allocate worker nodes
+- Start executors
+- Manage cluster resources
+
+---
+
+## Driver vs Cluster Manager
+
+Driver
+
+↓
+
+Coordinates computation
+
+Cluster Manager
+
+↓
+
+Provides resources
+
+---
+
+# Chapter 6 — Worker Node
+
+## What?
+
+A physical or virtual machine.
+
+Contains:
+
+- CPU
+- RAM
+- Disk
+- Network
+
+---
+
+Worker Node itself does not process Spark logic.
+
+Executors run inside Worker Nodes.
+
+---
+
+# Chapter 7 — Executor
+
+## What?
+
+A JVM process responsible for executing Spark Tasks.
+
+---
+
+## Responsibilities
+
+- Execute Tasks
+- Read Data
+- Perform Transformations
+- Cache Data
+- Return Results
+
+---
+
+## Does Executor build Logical Plan?
+
+No.
+
+Driver builds plans.
+
+Executors execute work.
+
+---
+
+# Chapter 8 — CPU Cores
+
+CPU cores determine the amount of parallel processing.
+
+Example
+
+Executor
+
+↓
+
+4 CPU Cores
+
+↓
+
+Can execute approximately 4 Tasks simultaneously.
+
+---
+
+Memory stores working data.
+
+CPU performs computation.
+
+---
+
+# Chapter 9 — Partitions
+
+## Definition
+
+A logical chunk of data that Spark processes independently.
+
+---
+
+## Why?
+
+To enable parallel processing.
+
+---
+
+## Initial Partitions
+
+Determined while reading metadata.
+
+Factors:
+
+- File Size
+- Block Size
+- File Format
+- Spark Configuration
+
+---
+
+## Shuffle Partitions
+
+Created after operations like:
+
+- groupBy()
+- join()
+- distinct()
+- repartition()
+
+---
+
+## Important Rule
+
+One Partition
+
+↓
+
+One Task
+
+---
+
+## Production Notes
+
+Too few partitions
+
+↓
+
+Poor CPU utilization
+
+Too many partitions
+
+↓
+
+Scheduling overhead
+
+Balanced partitioning provides optimal performance.
+
+---
+
+# Chapter 10 — Tasks
+
+## Definition
+
+Smallest unit of execution.
+
+---
+
+## Rule
+
+One Task processes exactly one Partition.
+
+---
+
+## Created By
+
+Driver
+
+---
+
+## Executed By
+
+Executor CPU Core
+
+---
+
+# Chapter 11 — Scheduling
+
+Driver maintains a queue of Tasks.
+
+Whenever an Executor Core becomes free,
+
+Driver assigns the next Task.
+
+Tasks are dynamically scheduled.
+
+Executors do not permanently own Tasks.
+
+---
+
+# Chapter 12 — Shuffle
+
+## Why?
+
+Operations like GROUP BY require all matching keys to be together.
+
+Example
+
+Before Shuffle
+
+Partition 1
+
+Mumbai
+
+Delhi
+
+Partition 2
+
+Mumbai
+
+Pune
+
+Spark cannot aggregate Mumbai yet.
+
+After Shuffle
+
+Partition A
+
+Mumbai
+
+Mumbai
+
+Partition B
+
+Delhi
+
+Partition C
+
+Pune
+
+Now aggregation becomes possible.
+
+---
+
+Shuffle creates:
+
+- New Partitions
+- New Tasks
+- Usually a New Stage
+
+---
+
+# Chapter 13 — Current Execution Flow
+
+PySpark Code
+
+↓
+
+Driver
+
+↓
+
+Read Metadata
+
+↓
+
+Determine Input Partitions
+
+↓
+
+Logical Plan
+
+↓
+
+Action
+
+↓
+
+Job
+
+↓
+
+Physical Plan
+
+↓
+
+Stages
+
+↓
+
+Tasks
+
+↓
+
+Executors
+
+↓
+
+Transformations
+
+↓
+
+Shuffle (if required)
+
+↓
+
+New Partitions
+
+↓
+
+New Tasks
+
+↓
+
+Final Result
+
+---
+
+# Important Relationships
+
+One Application
+
+↓
+
+One Driver
+
+↓
+
+Multiple Jobs
+
+↓
+
+Multiple Stages
+
+↓
+
+Multiple Tasks
+
+↓
+
+Each Task
+
+↓
+
+One Partition
+
+↓
+
+Runs on
+
+↓
+
+One Executor Core
+
+---
+
+# Databricks Certification Notes
+
+✔ Transformations are Lazy
+
+✔ Actions trigger Jobs
+
+✔ One Task processes one Partition
+
+✔ Driver schedules Tasks
+
+✔ Executors execute Tasks
+
+✔ Shuffle redistributes data
+
+✔ GROUP BY usually causes Shuffle
+
+✔ JOIN (non-broadcast) usually causes Shuffle
+
+✔ More Partitions than Cores is generally acceptable
+
+✔ Too many Partitions increase scheduling overhead
+
+✔ Too few Partitions reduce parallelism
+
+---
+
+# Spark Decision Framework
+
+For every Spark component ask:
+
+1. What is it?
+
+2. Why was it introduced?
+
+3. Who creates it?
+
+4. Who decides it?
+
+5. When is it created?
+
+6. Relationship with other Spark components.
+
+Never memorize Spark APIs without understanding this framework.
+
+
+
+# Spark Fundamentals Handbook — Part 2
+
+---
+
+# Chapter 14 — DataFrame
+
+## What is a DataFrame?
+
+A DataFrame is a distributed collection of data organized into named columns.
+
+Unlike Pandas, a Spark DataFrame does NOT hold the actual data.
+
+It stores a logical representation of the operations to be performed.
+
+---
+
+## Why?
+
+To support Lazy Evaluation and Query Optimization.
+
+---
+
+## What does a DataFrame contain?
+
+- Schema
+- Metadata
+- Lineage
+- Logical Plan
+
+It does NOT immediately load the entire dataset into memory.
+
+---
+
+## Example
+
+df = spark.read.csv(...)
+
+↓
+
+DataFrame Created
+
+↓
+
+No Data Processed Yet
+
+Only Metadata + Logical Plan
+
+---
+
+## Important Rule
+
+DataFrame
+
+↓
+
+Stores Plan
+
+↓
+
+Not Final Data
+
+---
+
+# Chapter 15 — Transformations
+
+## Definition
+
+Operations that create a new DataFrame.
+
+Examples
+
+- filter()
+- select()
+- withColumn()
+- groupBy()
+- join()
+- distinct()
+
+---
+
+## Characteristics
+
+- Immutable
+- Lazy
+- Builds Lineage
+- Returns New DataFrame
+
+---
+
+## Does Transformation execute?
+
+No.
+
+It only extends the Logical Plan.
+
+---
+
+# Chapter 16 — Actions
+
+## Definition
+
+Operations that trigger execution.
+
+Examples
+
+- show()
+- count()
+- collect()
+- write()
+- first()
+
+---
+
+## Why?
+
+Spark executes only when a result is requested.
+
+---
+
+## Rule
+
+Every Action
+
+↓
+
+Creates One Job
+
+---
+
+# Chapter 17 — Lazy Evaluation
+
+## Definition
+
+Spark postpones execution until an Action is called.
+
+---
+
+## Why?
+
+Allows Spark to optimize the entire query.
+
+---
+
+## Flow
+
+Transformation
+
+↓
+
+Transformation
+
+↓
+
+Transformation
+
+↓
+
+Action
+
+↓
+
+Execution Starts
+
+---
+
+## Benefit
+
+Spark optimizes the complete workflow instead of executing step-by-step.
+
+---
+
+# Chapter 18 — DataFrame Lineage
+
+## Definition
+
+History of transformations applied to a DataFrame.
+
+Example
+
+CSV
+
+↓
+
+filter()
+
+↓
+
+select()
+
+↓
+
+withColumn()
+
+↓
+
+groupBy()
+
+↓
+
+Current DataFrame
+
+---
+
+## Why?
+
+Allows Spark to:
+
+- Recompute lost partitions
+- Build Logical Plan
+- Optimize execution
+
+---
+
+# Chapter 19 — DAG (Directed Acyclic Graph)
+
+## Definition
+
+Graph representation of the Logical Plan.
+
+---
+
+## Why?
+
+Shows dependencies between transformations.
+
+---
+
+## Characteristics
+
+Directed
+
+↓
+
+Execution has direction.
+
+Acyclic
+
+↓
+
+No loops.
+
+---
+
+## Relationship
+
+Lineage
+
+↓
+
+Logical Plan
+
+↓
+
+Represented as DAG
+
+---
+
+# Chapter 20 — Catalyst Optimizer
+
+## What?
+
+Spark's Query Optimizer.
+
+---
+
+## Why?
+
+To generate the most efficient execution plan.
+
+---
+
+## Runs Before Execution
+
+Catalyst only works on the Logical Plan.
+
+---
+
+## Major Optimizations
+
+### Column Pruning
+
+Read only required columns.
+
+---
+
+### Predicate Pushdown
+
+Push filters close to the data source.
+
+---
+
+### Predicate Combination
+
+Merge multiple filters into one.
+
+---
+
+### Constant Folding
+
+Pre-compute constant expressions.
+
+Example
+
+5 + 10
+
+↓
+
+15
+
+before execution.
+
+---
+
+# Chapter 21 — Physical Planner
+
+## What?
+
+Converts Optimized Logical Plan into Physical Execution Plan.
+
+---
+
+## Responsibilities
+
+Choose:
+
+- Join Strategy
+- Execution Operators
+- Physical Execution Plan
+
+---
+
+## Output
+
+Physical Plan
+
+↓
+
+Jobs
+
+↓
+
+Stages
+
+↓
+
+Tasks
+
+---
+
+# Chapter 22 — Narrow vs Wide Transformations
+
+## Narrow Transformation
+
+Each output partition depends on one input partition.
+
+Examples
+
+- filter()
+- select()
+- withColumn()
+- map()
+
+---
+
+## Characteristics
+
+No Shuffle
+
+No Data Movement
+
+Usually Same Stage
+
+---
+
+## Wide Transformation
+
+Output partition depends on multiple input partitions.
+
+Examples
+
+- groupBy()
+- join()
+- distinct()
+- repartition()
+
+---
+
+## Characteristics
+
+Shuffle Required
+
+New Partitions
+
+New Tasks
+
+Usually New Stage
+
+---
+
+# Chapter 23 — Join Strategies
+
+Spark chooses different join algorithms depending on data size.
+
+---
+
+## Broadcast Hash Join
+
+When one table is small.
+
+Flow
+
+Small Table
+
+↓
+
+Broadcast
+
+↓
+
+Each Executor
+
+↓
+
+Local Join
+
+Advantages
+
+- No Shuffle
+- Fastest Join
+
+---
+
+## Sort Merge Join
+
+Default for large tables.
+
+Flow
+
+Shuffle
+
+↓
+
+Sort
+
+↓
+
+Merge
+
+↓
+
+Join
+
+Advantages
+
+- Scalable
+- Sequential Processing
+- Efficient for Large Data
+
+---
+
+## Shuffle Hash Join
+
+Less commonly selected.
+
+Flow
+
+Shuffle
+
+↓
+
+Build Hash Table
+
+↓
+
+Join
+
+---
+
+# Chapter 24 — Cache
+
+## Why?
+
+Avoid recomputing expensive transformations.
+
+---
+
+## Without Cache
+
+Action 1
+
+↓
+
+Read CSV
+
+↓
+
+Transformations
+
+↓
+
+Result
+
+Action 2
+
+↓
+
+Read CSV Again
+
+↓
+
+Transformations Again
+
+↓
+
+Result
+
+---
+
+## With Cache
+
+Action 1
+
+↓
+
+Compute Once
+
+↓
+
+Store Partitions
+
+Action 2
+
+↓
+
+Reuse Cached Partitions
+
+---
+
+## Important
+
+Cache is materialized only after the first Action.
+
+---
+
+# Chapter 25 — Repartition
+
+## Purpose
+
+Redistribute data into a new partition layout.
+
+---
+
+## Characteristics
+
+- Shuffle Required
+- Balanced Partitions
+- Can Increase Partitions
+- Can Decrease Partitions
+
+---
+
+## Use Cases
+
+- Increase Parallelism
+- Balance Data
+- Remove Data Skew
+
+---
+
+# Chapter 26 — Coalesce
+
+## Purpose
+
+Reduce partitions efficiently.
+
+---
+
+## Characteristics
+
+Usually
+
+- No Full Shuffle
+- Merge Existing Partitions
+- Faster than Repartition
+
+---
+
+## Limitation
+
+Cannot efficiently increase partitions.
+
+---
+
+## Use Cases
+
+Reduce output files before writing.
+
+---
+
+# Chapter 27 — Adaptive Query Execution (AQE)
+
+## What?
+
+Runtime optimization introduced in Spark 3.
+
+---
+
+## Difference
+
+Catalyst
+
+↓
+
+Optimizes Before Execution
+
+AQE
+
+↓
+
+Optimizes During Execution
+
+---
+
+## When does AQE work?
+
+After one stage finishes,
+
+Spark collects runtime statistics,
+
+then modifies the remaining execution plan.
+
+---
+
+## AQE Optimizations
+
+### Coalesce Shuffle Partitions
+
+Reduce unnecessary shuffle partitions.
+
+---
+
+### Convert Sort Merge Join
+
+↓
+
+Broadcast Join
+
+when runtime statistics show the table is small.
+
+---
+
+### Handle Skew
+
+Split large skewed partitions.
+
+---
+
+# Chapter 28 — Complete Spark Execution Lifecycle
+
+PySpark Code
+
+↓
+
+Driver
+
+↓
+
+Read Metadata
+
+↓
+
+Determine Initial Partitions
+
+↓
+
+Build Lineage
+
+↓
+
+Logical Plan
+
+↓
+
+DAG
+
+↓
+
+Lazy Evaluation
+
+↓
+
+Action
+
+↓
+
+Create Job
+
+↓
+
+Catalyst Optimizer
+
+↓
+
+Optimized Logical Plan
+
+↓
+
+Physical Planner
+
+↓
+
+Join Strategy
+
+↓
+
+Physical Execution Plan
+
+↓
+
+Stages
+
+↓
+
+Tasks
+
+↓
+
+Executors
+
+↓
+
+Execute Stage
+
+↓
+
+AQE (if more stages remain)
+
+↓
+
+Modify Remaining Plan
+
+↓
+
+Execute Next Stage
+
+↓
+
+Final Result
+
+↓
+
+Cache / Release Memory
+
+---
+
+# Spark Interview Rules
+
+DataFrame
+
+↓
+
+Stores Plan
+
+Not Data
+
+---
+
+Transformations
+
+↓
+
+Lazy
+
+---
+
+Actions
+
+↓
+
+Trigger Jobs
+
+---
+
+One Partition
+
+↓
+
+One Task
+
+---
+
+One Task
+
+↓
+
+One CPU Core
+
+---
+
+Shuffle
+
+↓
+
+Creates New Stage
+
+---
+
+Broadcast Join
+
+↓
+
+No Shuffle
+
+---
+
+GroupBy
+
+↓
+
+Shuffle
+
+---
+
+Join (Large Tables)
+
+↓
+
+Sort Merge Join
+
+---
+
+Catalyst
+
+↓
+
+Before Execution
+
+---
+
+AQE
+
+↓
+
+During Execution
+
+---
+
+Cache
+
+↓
+
+Avoid Recomputation
+
+---
+
+Coalesce
+
+↓
+
+Reduce Partitions
+
+---
+
+Repartition
+
+↓
+
+Redistribute Data
+
+---
+
+Physical Planner
+
+↓
+
+Chooses Join Strategy
+
+---
+
+Spark Optimization Philosophy
+
+Spark always tries to:
+
+✔ Maximize Parallelism
+
+✔ Minimize Shuffle
+
+✔ Minimize Disk I/O
+
+✔ Maximize Resource Utilization
+
+✔ Optimize Entire Query Instead of Individual Statements

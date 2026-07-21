@@ -1,0 +1,802 @@
+# SQL Reference Guide
+
+> This document summarizes every SQL concept learned during the Retail Data Engineering project.
+>
+> The focus is not only on syntax, but also on **when to use each concept, when not to use it, common mistakes, production considerations, and interview tips.**
+
+---
+
+# SQL Decision Framework
+
+```text
+Business Requirement
+        │
+        ▼
+Need to combine datasets?
+        │
+        ▼
+JOIN
+        │
+        ├── Matching rows only?
+        │       ▼
+        │   INNER JOIN
+        │
+        ├── Keep all rows from left table?
+        │       ▼
+        │   LEFT JOIN
+        │
+        ├── Keep all rows from both tables?
+        │       ▼
+        │   FULL OUTER JOIN
+        │
+        └── Need every possible combination?
+                ▼
+            CROSS JOIN
+
+────────────────────────────
+
+Need summarized output?
+
+        ▼
+
+GROUP BY
+
+────────────────────────────
+
+Need to filter summarized data?
+
+        ▼
+
+HAVING
+
+────────────────────────────
+
+Need conditional business logic?
+
+        ▼
+
+CASE
+
+────────────────────────────
+
+Need intermediate readable query?
+
+        ▼
+
+CTE
+
+────────────────────────────
+
+Need one calculated value?
+
+        ▼
+
+Scalar Subquery
+
+────────────────────────────
+
+Need multiple values?
+
+        ▼
+
+IN
+
+────────────────────────────
+
+Need row-by-row comparison?
+
+        ▼
+
+Correlated Subquery
+
+────────────────────────────
+
+Need to check existence only?
+
+        ▼
+
+EXISTS
+
+────────────────────────────
+
+Need to preserve every row?
+
+        ▼
+
+WINDOW FUNCTION
+
+        │
+        ├── Need first/latest row?
+        │       ▼
+        │   ROW_NUMBER()
+        │
+        ├── Need ranking with ties?
+        │       ▼
+        │   RANK()
+        │
+        ├── Need consecutive ranking?
+        │       ▼
+        │   DENSE_RANK()
+        │
+        ├── Need previous row?
+        │       ▼
+        │   LAG()
+        │
+        ├── Need next row?
+        │       ▼
+        │   LEAD()
+        │
+        ├── Need first value?
+        │       ▼
+        │   FIRST_VALUE()
+        │
+        ├── Need last value?
+        │       ▼
+        │   LAST_VALUE()
+        │
+        └── Need running calculations?
+                ▼
+        SUM()
+        AVG()
+        MIN()
+        MAX()
+        OVER()
+```
+
+---
+
+# SQL Concepts
+
+---
+
+# SELECT
+
+## Purpose
+
+Retrieve required columns from a table.
+
+## Use When
+
+- Fetching data.
+- Creating reports.
+
+## Syntax
+
+```sql
+SELECT column1, column2
+FROM table_name;
+```
+
+---
+
+# WHERE
+
+## Purpose
+
+Filter rows before aggregation.
+
+## Use When
+
+Need only matching rows.
+
+## Syntax
+
+```sql
+SELECT *
+FROM orders
+WHERE order_amount > 1000;
+```
+
+---
+
+# GROUP BY
+
+## Purpose
+
+Summarize data.
+
+## Use When
+
+Business wants totals, counts or averages.
+
+## Examples
+
+- Sales by Customer
+- Revenue by City
+- Orders by Category
+
+## Syntax
+
+```sql
+SELECT
+    customer_id,
+    SUM(order_amount)
+FROM orders
+GROUP BY customer_id;
+```
+
+## Don't Use
+
+When every row must remain in output.
+
+Use Window Functions instead.
+
+---
+
+# HAVING
+
+## Purpose
+
+Filter aggregated results.
+
+## Syntax
+
+```sql
+SELECT
+    customer_id,
+    SUM(order_amount)
+FROM orders
+GROUP BY customer_id
+HAVING SUM(order_amount) > 5000;
+```
+
+## Difference
+
+WHERE → filters rows
+
+HAVING → filters groups
+
+---
+
+# CASE
+
+## Purpose
+
+Business conditional logic.
+
+## Syntax
+
+```sql
+CASE
+WHEN order_amount > 1000 THEN 'High'
+ELSE 'Low'
+END
+```
+
+## Examples
+
+Customer Segmentation
+
+Order Status
+
+Priority
+
+---
+
+# INNER JOIN
+
+## Purpose
+
+Return only matching rows.
+
+## Syntax
+
+```sql
+SELECT *
+FROM orders o
+INNER JOIN customers c
+ON o.customer_id=c.customer_id;
+```
+
+---
+
+# LEFT JOIN
+
+## Purpose
+
+Keep every row from left table.
+
+## Use When
+
+Missing relationships are allowed.
+
+---
+
+# FULL OUTER JOIN
+
+## Purpose
+
+Keep all rows from both tables.
+
+---
+
+# CROSS JOIN
+
+## Purpose
+
+Generate every possible combination.
+
+## Use When
+
+No relationship exists.
+
+Examples
+
+- Products × Stores
+- Calendar × Stores
+- Cities × Categories
+
+## Avoid
+
+Fact Table × Fact Table
+
+---
+
+# UNION
+
+## Purpose
+
+Append two datasets.
+
+Duplicates removed.
+
+---
+
+# UNION ALL
+
+## Purpose
+
+Append datasets.
+
+Duplicates preserved.
+
+Preferred for performance.
+
+---
+
+# CTE
+
+## Purpose
+
+Improve readability.
+
+Create intermediate business results.
+
+## Syntax
+
+```sql
+WITH customer_sales AS
+(
+SELECT ...
+)
+SELECT *
+FROM customer_sales;
+```
+
+---
+
+# Scalar Subquery
+
+## Purpose
+
+Return one value.
+
+## Examples
+
+Overall Average
+
+Maximum Salary
+
+---
+
+# IN
+
+## Purpose
+
+Compare against multiple values.
+
+## Example
+
+```sql
+WHERE city IN ('Pune','Mumbai')
+```
+
+---
+
+# Correlated Subquery
+
+## Purpose
+
+Evaluate each outer row individually.
+
+## Use When
+
+Business logic depends on current row.
+
+---
+
+# EXISTS
+
+## Purpose
+
+Check whether related data exists.
+
+## Returns
+
+TRUE / FALSE
+
+Efficient for existence checks.
+
+---
+
+# WINDOW FUNCTIONS
+
+## Purpose
+
+Perform calculations while preserving every row.
+
+---
+
+# OVER()
+
+Creates a logical window.
+
+---
+
+# PARTITION BY
+
+Creates logical groups.
+
+---
+
+# ORDER BY
+
+Defines processing sequence inside each partition.
+
+---
+
+# ROW_NUMBER()
+
+## Purpose
+
+Return exactly one row.
+
+## Use
+
+Latest Order
+
+First Order
+
+## Syntax
+
+```sql
+ROW_NUMBER() OVER(
+PARTITION BY customer_id
+ORDER BY order_date
+)
+```
+
+---
+
+# RANK()
+
+## Purpose
+
+Ranking with gaps.
+
+Ties share same rank.
+
+---
+
+# DENSE_RANK()
+
+## Purpose
+
+Ranking without gaps.
+
+---
+
+# LAG()
+
+## Purpose
+
+Previous row.
+
+## Syntax
+
+```sql
+LAG(column,offset,default)
+```
+
+---
+
+# LEAD()
+
+## Purpose
+
+Next row.
+
+---
+
+# FIRST_VALUE()
+
+## Purpose
+
+Return first value of partition.
+
+---
+
+# LAST_VALUE()
+
+## Purpose
+
+Return last value.
+
+Usually requires
+
+```sql
+ROWS BETWEEN
+UNBOUNDED PRECEDING
+AND UNBOUNDED FOLLOWING
+```
+
+---
+
+# Aggregate Window Functions
+
+## SUM()
+
+Running Total
+
+---
+
+## AVG()
+
+Running Average
+
+---
+
+## MAX()
+
+Running Maximum
+
+Overall Maximum
+
+---
+
+## MIN()
+
+Running Minimum
+
+Overall Minimum
+
+---
+
+# Window Frame
+
+## Default
+
+```sql
+UNBOUNDED PRECEDING
+TO CURRENT ROW
+```
+
+Best for Running Calculations.
+
+---
+
+## Explicit
+
+```sql
+ROWS BETWEEN
+UNBOUNDED PRECEDING
+AND UNBOUNDED FOLLOWING
+```
+
+Used for
+
+LAST_VALUE
+
+Overall MIN/MAX
+
+Overall Aggregates
+
+---
+
+# NULL Handling
+
+## Check NULL
+
+```sql
+WHERE city IS NULL
+```
+
+---
+
+## Check NOT NULL
+
+```sql
+WHERE city IS NOT NULL
+```
+
+---
+
+## String "NULL"
+
+```sql
+WHERE city='NULL'
+```
+
+Looks for text "NULL"
+
+Not SQL NULL.
+
+---
+
+## Never Use
+
+```sql
+WHERE city=NULL
+```
+
+Returns no rows because NULL cannot be compared using =.
+
+---
+
+# DISTINCT
+
+## Purpose
+
+Return unique values.
+
+## Internally
+
+Reads complete dataset.
+
+Uses Hashing or Sorting.
+
+Can be expensive on large datasets.
+
+---
+
+# Production Tips
+
+Always identify:
+
+- Business Entity
+- Output Grain
+- Column Ownership
+- Requirement Validation
+
+before writing SQL.
+
+---
+
+# Common Interview Mistakes
+
+❌ Using GROUP BY when every row is required.
+
+✔ Use Window Functions.
+
+---
+
+❌ Using ROW_NUMBER() when ties matter.
+
+✔ Use RANK().
+
+---
+
+❌ Using RANK() when exactly one row is needed.
+
+✔ Use ROW_NUMBER().
+
+---
+
+❌ Using WHERE after GROUP BY.
+
+✔ Use HAVING.
+
+---
+
+❌ Comparing NULL using =
+
+✔ Use IS NULL
+
+---
+
+❌ CROSS JOIN on transactional tables.
+
+✔ CROSS JOIN dimension tables.
+
+---
+
+# Spark Notes
+
+GROUP BY
+
+- Shuffle Required
+- Expensive
+
+---
+
+DISTINCT
+
+- Reads complete dataset
+- Shuffle Required
+
+---
+
+ORDER BY
+
+- Global Sort
+- Expensive
+
+---
+
+Window Functions
+
+- Partition + Sort
+- Usually Shuffle Required
+
+---
+
+# SQL Cheat Sheet
+
+| Business Requirement | SQL Concept |
+|----------------------|-------------|
+| Retrieve Data | SELECT |
+| Filter Rows | WHERE |
+| Summarize Data | GROUP BY |
+| Filter Summary | HAVING |
+| Conditional Logic | CASE |
+| Combine Tables | JOIN |
+| Every Combination | CROSS JOIN |
+| Append Results | UNION |
+| Append Including Duplicates | UNION ALL |
+| Intermediate Result | CTE |
+| One Calculated Value | Scalar Subquery |
+| Multiple Values | IN |
+| Row-by-row Comparison | Correlated Subquery |
+| Existence Check | EXISTS |
+| Preserve Every Row | Window Function |
+| First/Latest Row | ROW_NUMBER() |
+| Ranking with Ties | RANK() |
+| Consecutive Ranking | DENSE_RANK() |
+| Previous Row | LAG() |
+| Next Row | LEAD() |
+| First Value | FIRST_VALUE() |
+| Last Value | LAST_VALUE() |
+| Running Total | SUM() OVER() |
+| Running Average | AVG() OVER() |
+| Running Maximum | MAX() OVER() |
+| Running Minimum | MIN() OVER() |
+
+---
+
+# Final Learning Principle
+
+> **Never choose SQL syntax first.**
+
+Always think in this order:
+
+```
+Business Requirement
+        ↓
+Business Entity
+        ↓
+Output Grain
+        ↓
+Column Ownership
+        ↓
+Requirement Validation
+        ↓
+Choose SQL Concept
+        ↓
+Write SQL
+        ↓
+Review
+        ↓
+Production Discussion
+```
+
+This approach emphasizes solving business problems rather than memorizing SQL syntax and forms the foundation for the Bronze → Silver → Gold Data Engineering pipeline.

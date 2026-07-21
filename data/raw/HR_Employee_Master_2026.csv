@@ -1,0 +1,151 @@
+Employee ID,First Name,Last Name,Gender,DOB,Email,Phone,Store ID,Department,Designation,Hire Date,Salary,Employment Type,Employee Status,Manager Employee ID,Created Date,Updated Date
+2001,Neha,Sharma,Male,1990-01-05,neha.sharma@retailmart.com,,8,Sales,Assistant Manager,2019-01-31,68390,Permanent,RESIGNED,,2019-01-31,2023-10-15
+2002,Pooja,Singh,Male,1984-02-28,pooja.singh@retailmart.com,9615594078,13,Finance,Manager,2019-10-10,43089,Contract,RESIGNED,,2019-10-10,2023-10-30
+2003,Neha,Joshi,Female,1987-04-18,neha.joshi@retailmart.com,+91 9553419283,15,IT,Executive,2021-01-31,33845,Permanent,ACTIVE,,2021-01-31,2025-10-23
+2004,Swati,Mishra,Male,2002-05-24,swati.mishra@retailmart.com,967 242 3884,19,IT,Assistant Manager,2019-07-12,61861,Permanent,ACTIVE,,2019-07-12,2025-03-29
+2005,Deepak,Joshi,Female,2004-10-25,deepak.joshi@retailmart.com,901 845 1462,1,Supply Chain,Lead,2021-04-01,41403,Permanent,RESIGNED,,2021-04-01,2026-05-14
+2006,Ankit,Mishra,Female,2001-12-01,ankit.mishra@retailmart.com,9015430391,16,Finance,Associate,2022-09-19,42455,Permanent,ACTIVE,,2022-09-19,2026-06-01
+2007,Priya,Iyer,Female,1999-08-26,priya.iyer@retailmart.com,+91 9871331509,19,Operations,Executive,2020-06-22,25235,Permanent,ACTIVE,,2020-06-22,2023-01-15
+2008,Swati,Yadav,Female,1998-04-05,swati.yadav@retailmart.com,9311656670,2,IT,Senior Executive,2018-09-22,36118,Permanent,ACTIVE,,2018-09-22,2020-11-14
+2009,Meera,Patel,Male,1984-03-08,meera.patel@retailmart.com,932 677 3602,1,IT,Associate,2023-04-25,33690,Contract,ACTIVE,,2023-04-25,2025-09-07
+2010,Amit,Yadav,Male,1994-01-25,amit.yadav@retailmart.com,9009788208,6,Finance,Assistant Manager,2022-01-29,69498,Permanent,ACTIVE,,2022-01-29,2024-05-04
+2011,Ankit,Jain,Female,1990-09-15,ankit.jain@retailmart.com,9462475107,3,Operations,Executive,2018-04-16,41576,Contract,ACTIVE,,2018-04-16,2022-03-15
+2012,Ankit,Sharma,Female,1984-08-24,ankit.sharma@retailmart.com,+91 9241182449,11,Operations,Assistant Manager,2025-02-28,72527,Contract,RESIGNED,,2025-02-28,2025-11-05
+2013,Pooja,Reddy,Female,2004-09-29,pooja.reddy@retailmart.com,+91 9680112805,14,Human Resources,Executive,2017-10-23,26370,Contract,ACTIVE,,2017-10-23,2018-04-04
+2014,Komal,Iyer,Male,1987-04-16,komal.iyer@retailmart.com,9260256342,13,Sales,Senior Associate,2026-05-19,40423,Permanent,ACTIVE,,2026-05-19,2026-06-17
+2015,Vikas,Das,Female,2004-01-20,vikas.das@retailmart.com,950 142 9401,12,Procurement,Executive,2019-12-09,39299,Permanent,ON LEAVE,,2019-12-09,2026-05-27
+2016,Priya,Jain,Female,1994-01-30,invalid-email,+91 9148465648,7,IT,Senior Executive,2016-10-13,37423,Permanent,RESIGNED,,2016-10-13,2023-03-02
+2017,Ramesh,Nair,Male,2002-12-06,ramesh.nair@retailmart.com,97214-89513,8,Operations,Senior Executive,2023-07-30,29828,Permanent,ACTIVE,,2023-07-30,2024-12-12
+2018,Deepak,Nair,Male,1980-03-31,deepak.nair@retailmart.com,9163287083,15,Human Resources,Senior Executive,2018-09-26,40225,Contract,ON LEAVE,,2018-09-26,2025-08-09
+2019,Ramesh,Gupta,Female,2003-05-20,ramesh.gupta@retailmart.com,97347-14345,18,Finance,Manager,2018-10-09,29534,Permanent,ACTIVE,,2018-10-09,2023-01-24
+2020,Suresh,Joshi,Male,1997-01-23,suresh.joshi@retailmart.com,+91 9705466889,16,Operations,Manager,2022-07-20,33943,Contract,ON LEAVE,,2022-07-20,2022-09-17
+2021,Meera,Sharma,Male,1983-10-07,meera.sharma@retailmart.com,962 720 4653,11,Procurement,Senior Executive,2022-08-21,37423,Contract,ON LEAVE,,2022-08-21,2024-01-19
+2022,Amit,Das,Male,1980-11-29,amit.das@retailmart.com,99232-71937,12,Human Resources,Associate,2018-10-09,44853,Permanent,ACTIVE,,2018-10-09,2022-04-05
+2023,Vikas,Yadav,Male,1984-07-27,vikas.yadav@retailmart.com,9491905865,17,Procurement,Assistant Manager,2025-04-25,50414,Contract,ON LEAVE,,2025-04-25,2025-06-18
+2024,Karan,Yadav,Female,2000-11-07,karan.yadav@retailmart.com,969 453 1473,19,IT,Manager,2026-04-24,36023,Permanent,ON LEAVE,,2026-04-24,2026-06-04
+2025,Rahul,Kulkarni,Male,1998-03-25,rahul.kulkarni@retailmart.com,+91 9783777014,13,Operations,Senior Associate,2016-12-16,35033,Contract,ON LEAVE,,2016-12-16,2023-03-02
+2026,neha,Iyer,Male,2004-01-14,neha.iyer@retailmart.com,9233749894,7,Supply Chain,Senior Associate,2019-07-16,32454,Contract,ACTIVE,,2019-07-16,2022-12-05
+2027,Akash,Patel,Female,2001-01-20,akash.patel@retailmart.com,977 520 4711,16,Finance,Manager,2016-02-20,43907,Permanent,ACTIVE,,2016-02-20,2017-10-23
+2028,Komal,Singh,Female,2000-03-17,invalid-email,9749649909,7,Operations,Manager,2021-11-10,33671,Permanent,ACTIVE,,2021-11-10,2023-03-16
+2029,Arjun,Iyer,Male,1990-06-21,arjun.iyer@retailmart.com,+91 9493618324,3,Sales,Manager,2021-02-02,30436,Contract,RESIGNED,,2021-02-02,2025-04-15
+2030,Meera,Nair,Male,1999-05-19,meera.nair@retailmart.com,95940-13990,19,Sales,Senior Executive,2016-11-25,30740,Contract,RESIGNED,,2016-11-25,2024-03-16
+2031,Suresh,Jain,Male,1987-03-19,suresh.jain@retailmart.com,95674-68071,9,Procurement,Executive,2023-07-07,28798,Contract,RESIGNED,,2023-07-07,2023-07-09
+2032,Amit,Singh,Male,1992-12-02,amit.singh@retailmart.com,9771093248,18,IT,Executive,2022-02-27,28054,Permanent,ACTIVE,,2022-02-27,2024-09-29
+2033,Akash,Nair,Male,1997-03-16,akash.nair@retailmart.com,93982-14658,1,Supply Chain,Senior Associate,2021-02-13,34783,Contract,ACTIVE,,2021-02-13,2023-08-16
+2034,Rohit,Yadav,Female,1981-12-16,rohit.yadav@retailmart.com,95766-27028,4,Customer Support,Senior Executive,2018-08-14,28267,Contract,ACTIVE,,2018-08-14,2020-03-26
+2035,Vikas,Chauhan,Female,1994-03-16,vikas.chauhan@retailmart.com,978 091 3431,4,Finance,Executive,2025-07-23,39538,Permanent,ACTIVE,,2025-07-23,2025-08-06
+2036,Sneha,Verma,Female,1990-10-20,sneha.verma@retailmart.com,979 237 4740,10,Human Resources,Senior Associate,2016-11-19,27420,Contract,ACTIVE,,2016-11-19,2023-06-22
+2037,Neha,Singh,Female,1993-04-09,neha.singh@retailmart.com,94064-09097,8,Procurement,Senior Executive,2022-05-31,32176,Permanent,RESIGNED,,2022-05-31,2023-10-26
+2038,Arjun,Das,Female,1985-11-23,arjun.das@retailmart.com,91456-23285,6,Supply Chain,Senior Executive,2016-05-16,40789,Contract,ACTIVE,,2016-05-16,2025-05-23
+2039,Meera,Jain,Female,1980-08-16,meera.jain@retailmart.com,9481754965,8,Customer Support,Associate,2024-11-12,25820,Contract,RESIGNED,,2024-11-12,2025-06-26
+2040,Amit,Gupta,Male,1990-07-13,amit.gupta@retailmart.com,982 675 8692,4,Customer Support,Senior Executive,2017-04-20,38373,Contract,ACTIVE,,2017-04-20,2025-01-15
+2041,Nikita,Sharma,Male,1985-06-24,nikita.sharma@retailmart.com,+91 9713900532,3,Operations,Senior Executive,2019-02-04,44214,Permanent,ACTIVE,,2019-02-04,2022-10-11
+2042,Sneha,Patel,Male,1985-11-29,sneha.patel@retailmart.com,+91 9053950240,14,Finance,Assistant Manager,2025-09-18,74433,Permanent,ON LEAVE,,2025-09-18,2026-05-05
+2043,Ankit,Gupta,Male,1982-09-23,ankit.gupta@retailmart.com,+91 9766177115,3,Human Resources,Senior Executive,2023-03-20,34011,Contract,ON LEAVE,,2023-03-20,2026-03-10
+2044,Meera,Iyer,Female,2000-04-03,meera.iyer@retailmart.com,93657-66156,9,Procurement,Manager,2018-05-30,30001,Contract,ACTIVE,,2018-05-30,2019-06-07
+2045,Meera,Kulkarni,Male,1998-06-05,meera.kulkarni@retailmart.com,+91 9560494519,5,Customer Support,Executive,2023-07-07,32348,Permanent,ACTIVE,,2023-07-07,2025-07-28
+2046,Meera,Sharma,Female,1981-04-19,meera.sharma@retailmart.com,924 455 0229,3,Human Resources,Lead,2026-06-02,26004,Permanent,RESIGNED,,2026-06-02,2026-06-08
+2047,Amit,Verma,Male,1983-08-29,amit.verma@retailmart.com,9476797643,12,IT,Senior Associate,2024-06-17,28633,Contract,RESIGNED,,2024-06-17,2025-10-28
+2048,Pooja,Das,Female,1985-05-19,pooja.das@retailmart.com,90762-26838,3,IT,Executive,2019-03-31,26386,Contract,ACTIVE,,2019-03-31,2024-05-26
+2049,Rahul,Jain,Female,1996-03-25,rahul.jain@retailmart.com,916 136 9681,10,Procurement,Senior Associate,2024-12-26,32260,Contract,ACTIVE,,2024-12-26,2025-03-14
+2050,Pooja,Singh,Female,1988-11-06,pooja.singh@retailmart.com,929 212 7799,19,Procurement,Associate,2017-08-22,35359,Permanent,ON LEAVE,,2017-08-22,2018-05-28
+2051,Amit,Sharma,Female,1983-06-11,amit.sharma@retailmart.com,919 986 7980,19,Operations,Executive,2025-04-29,35535,Contract,RESIGNED,,2025-04-29,2025-07-15
+2052,Amit,Singh,Female,2003-07-05,amit.singh@retailmart.com,9892554665,11,Finance,Assistant Manager,2020-11-28,60803,Permanent,RESIGNED,,2020-11-28,2024-09-17
+2053,Pooja,Mishra,Female,1985-10-13,pooja.mishra@retailmart.com,991 486 5281,17,Procurement,Executive,2019-06-24,25597,Contract,ACTIVE,,2019-06-24,2021-07-01
+2054,Neha,Kulkarni,Male,1995-02-08,neha.kulkarni@retailmart.com,992 962 2292,2,IT,Manager,2022-01-19,36937,Permanent,ON LEAVE,,2022-01-19,2025-06-22
+2055,Priya,Jain,Female,2000-09-16,priya.jain@retailmart.com,94688-62392,2,Customer Support,Assistant Manager,2022-05-25,78643,Contract,RESIGNED,,2022-05-25,2022-12-21
+2056,Suresh,Patel,Female,1995-09-06,suresh.patel@retailmart.com,90606-85361,8,Sales,Senior Associate,2025-02-27,35442,Permanent,ACTIVE,,2025-02-27,2026-04-08
+2057,Komal,Sharma,Female,1989-09-03,komal.sharma@retailmart.com,9289861434,2,Operations,Associate,2016-03-18,38756,Contract,ACTIVE,,2016-03-18,2017-06-15
+2058,Rahul,Yadav,Female,1988-05-26,rahul.yadav@retailmart.com,9185188888,13,Customer Support,Executive,2018-09-12,26426,Contract,ACTIVE,,2018-09-12,2021-07-16
+2059,Anjali,Verma,Female,1987-11-08,anjali.verma@retailmart.com,9772217043,7,Sales,Associate,2019-12-14,35341,Contract,RESIGNED,,2019-12-14,2024-06-01
+2060,Anjali,Gupta,Female,1999-08-08,anjali.gupta@retailmart.com,96765-27758,3,IT,Associate,2024-12-18,27586,Contract,RESIGNED,,2024-12-18,2025-06-20
+2061,Ramesh,Jain,Female,1999-07-06,ramesh.jain@retailmart.com,940 165 8202,2,Human Resources,Senior Executive,2016-06-22,27203,Permanent,ACTIVE,,2016-06-22,2020-07-14
+2062,Swati,Verma,Female,1994-02-06,swati.verma@retailmart.com,9431027868,9,Supply Chain,Lead,2020-02-12,39623,Permanent,RESIGNED,,2020-02-12,2023-04-26
+2063,Vikas,Das,Female,1995-08-02,vikas.das@retailmart.com,+91 9188442258,4,Operations,Assistant Manager,2025-06-25,75954,Permanent,ACTIVE,,2025-06-25,2026-03-04
+2064,Arjun,Joshi,Female,2003-07-31,arjun.joshi@retailmart.com,96691-25177,5,Human Resources,Assistant Manager,2024-01-23,75158,Permanent,ON LEAVE,,2024-01-23,2025-06-20
+2065,Nikita,Kulkarni,Male,1991-03-29,nikita.kulkarni@retailmart.com,+91 9384249818,19,Human Resources,Executive,2025-06-26,30609,Contract,RESIGNED,,2025-06-26,2025-07-17
+2066,Suresh,Yadav,Female,2004-06-21,suresh.yadav@retailmart.com,+91 9447364710,15,IT,Assistant Manager,2016-05-04,65867,Contract,ACTIVE,,2016-05-04,2020-02-26
+2067,Nikita,Kulkarni,Female,1990-11-04,nikita.kulkarni@retailmart.com,971 473 2104,20,IT,Lead,2017-03-10,33135,Permanent,ACTIVE,,2017-03-10,2023-09-01
+2068,Vikas,Joshi,Male,1989-08-25,vikas.joshi@retailmart.com,9950047974,4,IT,Lead,2021-02-15,29388,Contract,ACTIVE,,2021-02-15,2025-05-29
+2069,Ramesh,Das,Male,1985-10-09,ramesh.das@retailmart.com,916 558 5239,17,Sales,Lead,2019-02-19,26484,Permanent,ACTIVE,,2019-02-19,2022-11-14
+2070,Deepak,Yadav,Female,1995-02-02,deepak.yadav@retailmart.com,98887-94705,4,IT,Assistant Manager,2025-06-13,69126,Contract,ACTIVE,,2025-06-13,2026-04-14
+2071,Sneha,Kulkarni,Female,1986-08-18,sneha.kulkarni@retailmart.com,+91 9309130756,14,Operations,Assistant Manager,2024-02-01,63447,Contract,ACTIVE,,2024-02-01,2026-01-23
+2072,Meera,Jain,Female,2001-09-19,meera.jain@retailmart.com,933 484 3443,11,Customer Support,Lead,2019-12-22,36429,Contract,ACTIVE,,2019-12-22,2021-05-04
+2073,Amit,Gupta,Female,1999-11-04,amit.gupta@retailmart.com,9473384842,20,Operations,Assistant Manager,2016-11-19,57944,Temporary Worker,RESIGNED,,2016-11-19,2019-06-01
+2074,Meera,Mishra,Female,2001-06-01,meera.mishra@retailmart.com,9345401938,6,IT,Senior Associate,2020-07-24,30760,Permanent,ON LEAVE,,2020-07-24,2026-02-12
+2075,Anjali,Gupta,Female,1986-01-07,anjali.gupta@retailmart.com,+91 9874315274,1,Procurement,Senior Executive,2023-03-11,34667,Permanent,ACTIVE,,2023-03-11,2025-06-18
+2076,Rohit,Sharma,Male,2000-01-15,rohit.sharma@retailmart.com,9454990453,4,Customer Support,Executive,2020-04-20,35053,Permanent,ON LEAVE,,2020-04-20,2025-12-08
+2077,Rohit,Singh,Male,2000-05-29,rohit.singh@retailmart.com,9956878339,17,Customer Support,Senior Associate,2021-05-12,42307,Contract,ACTIVE,,2021-05-12,2024-07-10
+2078,Ramesh,Patel ,Female,1984-01-29,ramesh.patel@retailmart.com,9870728679,18,Customer Support,Assistant Manager,2018-04-21,72045,Contract,ACTIVE,,2018-04-21,2022-09-28
+2079,Vikas,Mishra,Female,1998-05-04,invalid-email,+91 9226567661,12,Finance,Senior Executive,2016-05-09,30848,Contract,RESIGNED,,2016-05-09,2017-10-12
+2080,Meera,Joshi,Male,2000-08-29,meera.joshi@retailmart.com,+91 9524310690,7,Finance,Manager,2018-07-29,28306,Permanent,ON LEAVE,,2018-07-29,2025-04-11
+2081,Amit,Verma,Male,1994-04-21,amit.verma@retailmart.com,99953-42836,9,Sales,Lead,2019-03-30,43242,Permanent,ON LEAVE,,2019-03-30,2025-06-22
+2082,Pooja,Gupta,Female,1990-10-23,pooja.gupta@retailmart.com,+91 9342708668,13,Operations,Senior Executive,2018-01-23,33355,Permanent,ACTIVE,,2018-01-23,2025-04-24
+2083,Komal,Yadav,Male,1988-06-09,komal.yadav@retailmart.com,+91 9983735403,4,Customer Support,Associate,2025-10-18,32949,Permanent,ON LEAVE,,2025-10-18,2026-02-17
+2084,Akash,Nair,Female,1994-05-13,akash.nair@retailmart.com,93556-09320,18,IT,Associate,2025-01-01,34672,Permanent,ACTIVE,,2025-01-01,2025-12-04
+2085,Akash,Iyer,Female,2000-09-02,akash.iyer@retailmart.com,,3,Sales,Assistant Manager,2024-04-17,75045,Permanent,ON LEAVE,,2024-04-17,2024-09-04
+2086,Komal,Mishra,Female,1980-09-14,komal.mishra@retailmart.com,90886-00848,1,IT,Senior Executive,2023-05-24,30874,Permanent,ACTIVE,,2023-05-24,2026-05-01
+2087,Deepak,Nair,Male,1993-06-15,deepak.nair@retailmart.com,9101666870,6,Finance,Lead,2018-09-23,41379,Contract,ACTIVE,,2018-09-23,2025-01-26
+2088,Swati,Nair,Male,1992-07-29,swati.nair@retailmart.com,989 025 0392,3,Supply Chain,Executive,2016-07-09,30323,Permanent,RESIGNED,,2016-07-09,2025-11-17
+2089,Vikas,Kulkarni,Male,1984-05-19,vikas.kulkarni@retailmart.com,9631599965,9,Customer Support,Assistant Manager,2019-11-17,66076,Permanent,ACTIVE,,2019-11-17,2026-01-29
+2090,Vikas,Patel,Female,1986-12-02,vikas.patel@retailmart.com,96551-10475,4,Human Resources,Executive,2017-09-23,27860,Permanent,ON LEAVE,,2017-09-23,2022-10-05
+2091,Deepak,Sharma,Female,1983-10-19,deepak.sharma@retailmart.com,98398-26224,9,Customer Support,Executive,2020-08-21,29781,Permanent,ACTIVE,,2020-08-21,2025-07-06
+2092,Komal,Singh,Male,1993-08-31,komal.singh@retailmart.com,+91 9065965756,10,Procurement,Senior Executive,2017-03-14,44766,Permanent,ON LEAVE,,2017-03-14,2020-09-20
+2093,Anjali,Joshi,Female,1996-05-16,anjali.joshi@retailmart.com,+91 9193982807,15,Supply Chain,Executive,2025-02-26,27266,Contract,ON LEAVE,,2025-02-26,2025-05-08
+2094,Akash,Yadav,Female,2004-05-21,akash.yadav@retailmart.com,9058911352,19,IT,Senior Executive,2021-12-28,35865,Contract,ACTIVE,,2021-12-28,2022-01-18
+2095,Ramesh,Das,Male,1995-06-22,ramesh.das@retailmart.com,90714-61125,11,Customer Support,Assistant Manager,2022-08-07,75698,Permanent,RESIGNED,,2022-08-07,2025-04-22
+2096,Rahul,Chauhan,Male,1987-05-16,rahul.chauhan@retailmart.com,+91 9382825867,13,Human Resources,Executive,2023-04-08,-31107,Contract,ON LEAVE,,2023-04-08,2023-06-06
+2097,Vikas,Yadav,Male,1996-05-29,vikas.yadav@retailmart.com,953 714 7859,20,IT,Associate,2024-12-18,44234,Permanent,ACTIVE,,2024-12-18,2025-12-13
+2098,Pooja,Jain,Female,1985-03-31,pooja.jain@retailmart.com,925 286 6929,14,Human Resources,Associate,2018-09-04,40947,Temporary Worker,RESIGNED,,2018-09-04,2020-07-18
+2099,Pooja,Singh,Female,1998-05-09,pooja.singh@retailmart.com,97677-21903,2,Supply Chain,Manager,2020-04-21,32367,Contract,ACTIVE,,2020-04-21,2025-06-07
+2100,Nikita,Kulkarni,Male,1999-10-19,nikita.kulkarni@retailmart.com,98361-34074,3,Customer Support,Manager,2024-06-26,28846,Permanent,ACTIVE,,2024-06-26,2026-02-18
+2101,Amit,Yadav,Female,2004-03-02,amit.yadav@retailmart.com,925 449 4812,2,Supply Chain,Executive,2021-12-20,29157,Permanent,ACTIVE,,2021-12-20,2022-10-15
+2102,Suresh,Joshi,Male,1998-01-26,suresh.joshi@retailmart.com,984 577 5901,12,Finance,Senior Executive,2016-11-05,42512,Contract,ACTIVE,,2016-11-05,2021-08-30
+2103,Anjali,Mishra,Male,1982-01-22,anjali.mishra@retailmart.com,+91 9170127706,5,Supply Chain,Assistant Manager,2024-07-19,55209,Contract,ACTIVE,,2024-07-19,2026-05-20
+2104,Rohit,Joshi,Male,1980-01-18,rohit.joshi@retailmart.com,9371293870,11,Finance,Assistant Manager,2017-01-08,78191,Contract,ACTIVE,,2017-01-08,2022-05-18
+2105,Pooja,Reddy,Male,2003-10-18,pooja.reddy@retailmart.com,990 927 5326,7,Finance,Assistant Manager,2017-08-08,79379,Permanent,ACTIVE,,2017-08-08,2026-01-15
+2106,Rohit,Kulkarni,Female,1981-03-15,rohit.kulkarni@retailmart.com,+91 9438983640,16,IT,Lead,2022-09-23,28694,Permanent,ON LEAVE,,2022-09-23,2026-04-21
+2107,Swati,Joshi,Male,2001-02-16,swati.joshi@retailmart.com,910 910 4300,17,Supply Chain,Executive,2022-02-15,41418,Contract,ON LEAVE,,2022-02-15,2026-01-22
+2108,Pooja,Kulkarni,Male,1993-11-29,pooja.kulkarni@retailmart.com,9630316179,10,Human Resources,Executive,2020-05-19,28913,Permanent,ACTIVE,,2020-05-19,2020-07-04
+2109,Karan,Iyer,Male,1995-01-10,karan.iyer@retailmart.com,96481-49177,2,Customer Support,Associate,2024-08-25,43575,Permanent,ACTIVE,,2024-08-25,2025-02-02
+2110,Rahul,Singh,Female,1997-03-06,rahul.singh@retailmart.com,92208-63536,9,Finance,Associate,2021-04-16,43728,Contract,ACTIVE,,2021-04-16,2024-02-08
+2111,Arjun,Das,Female,1983-11-16,invalid-email,+91 9870534949,15,Procurement,Manager,2019-06-26,44388,Contract,ACTIVE,,2019-06-26,2025-08-11
+2112,Rahul,Jain,Female,1993-10-17,rahul.jain@retailmart.com,9138367024,2,Operations,Associate,2024-07-05,42031,Contract,ACTIVE,,2024-07-05,2025-10-17
+2113,Suresh,Reddy,Female,1991-09-16,suresh.reddy@retailmart.com,+91 9565574313,19,Finance,Senior Associate,2018-08-27,30092,Permanent,ACTIVE,,2018-08-27,2023-09-11
+2114,Neha,Patel,Female,1981-10-22,neha.patel@retailmart.com,93521-35680,9,Human Resources,Senior Associate,2025-01-20,26018,Contract,ON LEAVE,,2025-01-20,2025-10-02
+2115,Priya,Chauhan,Male,1991-08-11,priya.chauhan@retailmart.com,9101372151,15,Sales,Senior Executive,2020-03-04,30504,Contract,ON LEAVE,,2020-03-04,2025-09-26
+2116,Amit,Yadav,Male,1993-03-28,amit.yadav@retailmart.com,976 870 1462,7,Operations,Lead,2022-12-02,42814,Permanent,ON LEAVE,,2022-12-02,2024-12-06
+2117,Komal,Singh,Female,1982-08-17,komal.singh@retailmart.com,97859-32133,18,Sales,Associate,2026-01-17,32189,Contract,ACTIVE,,2026-01-17,2026-03-02
+2118,Swati,Yadav,Male,2002-01-29,swati.yadav@retailmart.com,+91 9842701039,1,Customer Support,Senior Associate,2022-04-25,25022,Contract,RESIGNED,,2022-04-25,2023-06-11
+2119,Pooja,Das,Female,1983-04-03,pooja.das@retailmart.com,956 915 4522,16,Procurement,Associate,2025-06-29,30708,Contract,ACTIVE,,2025-06-29,2026-06-04
+2120,Swati,Joshi,Male,1988-03-02,swati.joshi@retailmart.com,9959391725,8,Procurement,Manager,2024-08-23,35469,Permanent,ACTIVE,,2024-08-23,2026-06-08
+2121,Rahul,Sharma,Female,1987-06-18,rahul.sharma@retailmart.com,+91 9676586179,6,Customer Support,Senior Executive,2020-11-29,27415,Permanent,ACTIVE,,2020-11-29,2021-01-09
+2122,Vikas,Jain,Female,1981-05-22,vikas.jain@retailmart.com,+91 9629620153,14,Supply Chain,Lead,2022-11-18,34224,Contract,ACTIVE,,2022-11-18,2023-06-02
+2123,Komal,Nair,Male,1989-04-13,komal.nair@retailmart.com,92417-14677,3,IT,Senior Associate,2017-02-01,31058,Contract,ON LEAVE,,2017-02-01,2021-03-25
+2124,Neha,Patel,Female,1990-03-16,neha.patel@retailmart.com,980 686 8793,10,Finance,Assistant Manager,2019-11-09,62936,Permanent,RESIGNED,,2019-11-09,2026-04-05
+2125,Sneha,Singh,Male,1981-11-30,sneha.singh@retailmart.com,9616329451,13,IT,Manager,2018-02-28,43089,Contract,ACTIVE,,2018-02-28,2023-12-27
+2126,Pooja,Yadav,Male,1984-09-26,pooja.yadav@retailmart.com,991 485 6467,2,Human Resources,Lead,2022-07-14,34024,Contract,ACTIVE,,2022-07-14,2025-12-31
+2127,Karan,Mishra,Female,1993-08-05,karan.mishra@retailmart.com,94471-32475,14,Finance,Executive,2016-03-23,31158,Contract,ACTIVE,,2016-03-23,2026-06-20
+2128,Arjun,Iyer,Male,2003-07-08,arjun.iyer@retailmart.com,9902330307,12,Operations,Lead,2020-07-10,33977,Contract,ON LEAVE,,2020-07-10,2026-03-09
+2129,Akash,Yadav,Female,1987-05-03,akash.yadav@retailmart.com,+91 9414060293,8,Operations,Lead,2019-12-03,33817,Contract,RESIGNED,,2019-12-03,2020-02-23
+2130,Rohit,Gupta,Female,1992-05-08,rohit.gupta@retailmart.com,966 574 3748,19,Finance,Lead,2025-01-10,25240,Contract,RESIGNED,,2025-01-10,2025-10-26
+2131,Arjun,Singh,Male,1982-07-19,arjun.singh@retailmart.com,996 520 7446,13,Sales,Senior Associate,2021-10-19,44104,Permanent,ACTIVE,,2021-10-19,2025-11-14
+2132,Sneha,Chauhan,Male,1993-03-06,sneha.chauhan@retailmart.com,91724-82513,8,Supply Chain,Assistant Manager,2025-10-30,63778,Contract,ACTIVE,,2025-10-30,2026-01-04
+2133,Akash,Mishra,Male,1997-02-13,akash.mishra@retailmart.com,,5,Procurement,Senior Associate,2021-08-11,30909,Permanent,ON LEAVE,,2021-08-11,2023-06-23
+2134,sneha,Nair,Male,1985-10-21,sneha.nair@retailmart.com,+91 9966667600,12,Sales,Manager,2024-07-24,35558,Permanent,ACTIVE,,2024-07-24,2026-06-16
+2135,Vikas,Chauhan,Female,2000-06-13,vikas.chauhan@retailmart.com,+91 9898562575,6,IT,Associate,2019-05-06,25626,Permanent,ACTIVE,,2019-05-06,2020-10-24
+2136,Karan,Das,Male,1982-02-24,karan.das@retailmart.com,91001-67618,16,Human Resources,Lead,2022-12-27,31733,Permanent,ACTIVE,,2022-12-27,2025-05-06
+2137,KOMAL,Patel,Male,2002-04-29,komal.patel@retailmart.com,+91 9393483564,2,Customer Support,Executive,2017-04-11,31805,Contract,ACTIVE,,2017-04-11,2019-11-27
+2138,Neha,Mishra,Male,2000-06-27,neha.mishra@retailmart.com,94470-12045,14,Finance,Executive,2023-03-24,28112,Permanent,ACTIVE,,2023-03-24,2024-01-01
+2139,Anjali,Verma,Female,2000-06-23,anjali.verma@retailmart.com,9467621202,14,Customer Support,Associate,2020-06-29,43643,Contract,ACTIVE,,2020-06-29,2024-10-01
+2140,Akash,Patel,Male,1982-11-03,akash.patel@retailmart.com,9450899358,14,Operations,Senior Executive,2020-12-10,40791,Contract,ON LEAVE,,2020-12-10,2021-10-10
+2141,Akash,Chauhan,Female,1994-05-20,akash.chauhan@retailmart.com,+91 9354083866,3,Customer Support,Senior Associate,2016-11-02,39555,Contract,ACTIVE,,2016-11-02,2026-06-11
+2142,Meera,Sharma,Female,2002-10-20,meera.sharma@retailmart.com,983 755 0375,12,Customer Support,Manager,2017-01-07,28736,Permanent,ACTIVE,,2017-01-07,2017-01-15
+2143,Sneha,Nair,Female,1984-10-18,sneha.nair@retailmart.com,94933-16373,4,IT,Senior Associate,2025-03-20,26523,Permanent,ON LEAVE,,2025-03-20,2025-11-09
+2144,Swati,Nair,Male,1987-10-16,swati.nair@retailmart.com,+91 9216995866,9,IT,Lead,2024-10-04,36234,Contract,ON LEAVE,,2024-10-04,2025-02-17
+2145,Meera,Reddy,Male,1993-01-12,meera.reddy@retailmart.com,952 288 5158,19,IT,Senior Associate,2018-04-02,42494,Contract,ON LEAVE,,2018-04-02,2018-05-24
+2146,Arjun,Reddy,Male,1993-03-28,arjun.reddy@retailmart.com,938 057 1983,8,Supply Chain,Executive,2017-08-22,26539,Contract,ON LEAVE,,2017-08-22,2022-04-24
+2147,Ramesh,Chauhan,Female,2004-07-08,ramesh.chauhan@retailmart.com,9933472122,13,Sales,Senior Associate,2026-03-22,39041,Contract,RESIGNED,,2026-03-22,2026-04-24
+2148,Anjali,Yadav,Female,2002-01-02,anjali.yadav@retailmart.com,9985158328,17,Human Resources,Associate,2024-09-03,38629,Contract,ACTIVE,,2024-09-03,2025-08-26
+2149,Meera,Chauhan,Male,1985-02-22,meera.chauhan@retailmart.com,9573993056,13,Supply Chain,Manager,2023-04-13,42702,Contract,ACTIVE,,2023-04-13,2026-03-06
+2150,Ankit,Patel,Male,1982-12-08,ankit.patel@retailmart.com,9336138612,15,Procurement,Associate,2017-11-16,26241,Permanent,ACTIVE,,2017-11-16,2018-06-26
