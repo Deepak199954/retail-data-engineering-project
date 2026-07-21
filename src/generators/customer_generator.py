@@ -185,7 +185,11 @@ class CustomerGenerator:
 
                 {
 
-                    "Customer ID": customer_id,
+                    "Customer ID": CommonUtils.generate_id(
+                            "CUST",
+                            customer_id,
+                            5
+                    ),
 
                     "Customer Name": customer_name,
 

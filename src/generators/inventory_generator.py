@@ -180,7 +180,11 @@ class InventoryGenerator:
 
                 record = {
 
-                    "Inventory ID": inventory_id,
+                    "Inventory ID": CommonUtils.generate_id(
+                        "INV",
+                        inventory_id,
+                        6
+                    ),
 
                     "Product ID": product["Product ID"],
 

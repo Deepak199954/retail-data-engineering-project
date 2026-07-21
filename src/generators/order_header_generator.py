@@ -211,7 +211,11 @@ class OrderHeaderGenerator:
 
             record = {
 
-                "Order ID": order_id,
+                "Order ID": CommonUtils.generate_id(
+                    "ORD",
+                    order_id,
+                    6
+                ),
 
                 "Customer ID": customer["Customer ID"],
 

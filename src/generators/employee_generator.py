@@ -253,7 +253,11 @@ class EmployeeGenerator:
 
             record = {
 
-                "Employee ID": employee_id,
+                "Employee ID": CommonUtils.generate_id(
+                    "EMP",
+                    employee_id,
+                    5
+                ),
 
                 "First Name": first_name,
 

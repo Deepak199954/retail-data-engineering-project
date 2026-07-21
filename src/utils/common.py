@@ -65,6 +65,17 @@ class CommonUtils:
     ##################################################
 
     @staticmethod
+    def generate_id(
+            prefix,
+            number,
+            width
+    ):
+
+        return f"{prefix}{number:0{width}d}"
+
+    ##################################################
+
+    @staticmethod
     def random_phone():
 
         number = "9"

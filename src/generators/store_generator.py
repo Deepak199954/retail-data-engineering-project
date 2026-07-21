@@ -175,7 +175,11 @@ class StoreGenerator:
 
             record = {
 
-                "Store ID": store_id,
+                "Store ID": CommonUtils.generate_id(
+                    "STR",
+                    store_id,
+                    5
+                ),
 
                 "Store Name": self.generate_store_name(
                     city

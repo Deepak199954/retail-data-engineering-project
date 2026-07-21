@@ -1,10 +1,3 @@
-"""
-==========================================================
-RetailMart Order Detail Generator
-Author : ChatGPT
-==========================================================
-"""
-
 import random
 
 import pandas as pd
@@ -200,7 +193,11 @@ class OrderDetailGenerator:
 
                 record = {
 
-                    "Order Detail ID": order_detail_id,
+                    "Order Detail ID": CommonUtils.generate_id(
+                        "ORDDET",
+                        order_detail_id,
+                        6
+                    ),
 
                     "Order ID": order["Order ID"],
 

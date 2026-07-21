@@ -69,7 +69,10 @@ class ProductGenerator:
 
         sub = sub_category[:3].upper()
 
-        return f"SKU-{cat}-{sub}-{product_id}"
+        return (
+            f"SKU-{cat}-{sub}-"
+            f"{product_id:05d}"
+        )
 
     # ==========================================================
     # COST PRICE
@@ -339,7 +342,11 @@ class ProductGenerator:
 
             record = {
 
-                "Product ID": product_id,
+                "Product ID": CommonUtils.generate_id(
+                    "PROD",
+                    product_id,
+                    5
+                ),
 
                 "SKU": sku,
 
@@ -351,7 +358,11 @@ class ProductGenerator:
 
                 "Brand": brand,
 
-                "Supplier ID": supplier_id,
+                "Supplier ID": CommonUtils.generate_id(
+                    "SUP",
+                    supplier_id,
+                    5
+                ),
 
                 "Unit Cost": cost_price,
 

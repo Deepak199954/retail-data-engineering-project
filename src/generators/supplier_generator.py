@@ -98,7 +98,11 @@ class SupplierGenerator:
             rows.append(
                 {
 
-                    "Supplier ID": supplier_id,
+                    "Supplier ID": CommonUtils.generate_id(
+                        "SUP",
+                        supplier_id,
+                        5
+                    ),
 
                     "Supplier Name": supplier_name,
 

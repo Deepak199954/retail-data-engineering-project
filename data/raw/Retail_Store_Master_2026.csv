@@ -1,21 +1,21 @@
 Store ID,Store Name,Store Type,Region,State,City,Address,Postal Code,Phone,Email,Manager ID,Opening Date,Store Status,Created Date,Updated Date
-1,RetailMart Signature Mumbai,Hypermarket,West,Maharashtra,Mumbai,"229, Park Street",872246,+91 9181960013,mumbai@retailmart.com,,2023-04-26,UNDER RENOVATION,2023-04-26,2023-06-19
-2,RetailMart Lakeside Pune,Supermarket,West,Maharashtra,Pune,"285, Park Street",325772,9511615594,pune@retailmart.com,,2022-10-30,ACTIVE,2022-10-30,2025-11-01
-3,RetailMart Metro Plaza Coimbatore,Hypermarket,South,Tamil Nadu,Coimbatore,"678, Commercial Street",910620,94131-64752,coimbatore@retailmart.com,,2022-11-25,ACTIVE,2022-11-25,2024-01-28
-4,RetailMart Skyline Mysuru,Supermarket,South,Karnataka,Mysuru,"948, Airport Road",330283,95030-56413,mysuru@retailmart.com,,2020-03-08,ACTIVE,2020-03-08,2025-10-12
-5,RetailMart One Salem,Supermarket,South,Tamil Nadu,Salem,"371, Commercial Street",245051,9871012269,salem@retailmart.com,,2025-01-25,ACTIVE,2025-01-25,2026-02-19
-6,RetailMart Infinity Nagpur,Hypermarket,West,Maharashtra,Nagpur,"301, Market Road",265840,99999,nagpur@retailmart.com,,2023-08-15,ACTIVE,2023-08-15,2025-09-18
-7,RetailMart Downtown Mumbai,Supermarket,West,Maharashtra,Mumbai,"246, MG Road",352572,+91 9911718227,mumbai@retailmart.com,,2025-06-02,ACTIVE,2025-06-02,2026-02-27
-8,RetailMart Downtown Salem,Supermarket,South,Tamil Nadu,Salem,"922, Airport Road",573417,+91 9133150983,salem@retailmart.com,,2022-07-14,ACTIVE,2022-07-14,2022-12-06
-9,RetailMart Mega Store Salem,Hypermarket,South,Tamil Nadu,Salem,"741, Lake View Road",704201,973 763 1165,salem@retailmart.com,,2017-05-27,ACTIVE,2017-05-27,2022-08-21
-10,RetailMart Express Pune,Express Store,West,Maharashtra,Pune,"460, Park Street",542374,9247317810,pune@retailmart.com,,2017-02-23,ACTIVE,2017-02-23,2025-08-06
-11,RetailMart Signature New Delhi,Supermarket,North,Delhi,New Delhi,"293, Market Road",830429,9872343098,newdelhi@retailmart.com,,2019-05-19,ACTIVE,2019-05-19,2020-01-08
-12,RetailMart Metro Plaza Bengaluru,Express Store,South,Karnataka,Bengaluru,"883, Commercial Street",523389,91939-90916,bengaluru@retailmart.com,,2021-09-03,ACTIVE,2021-09-03,2022-10-26
-13,RetailMart Prime Mumbai,Express Store,West,Maharashtra,Mumbai,"103, Station Road",663750,99999,mumbai@retailmart.com,,2020-02-21,ACTIVE,2020-02-21,2026-03-26
-14,RetailMart High Street Chennai,Supermarket,South,Tamil Nadu,Chennai,"119, Station Road",878480,982 449 3534,invalid-email,,2025-07-12,ACTIVE,2025-07-12,2025-08-07
-15,RetailMart Crown Coimbatore,Express Store,South,Tamil Nadu,Coimbatore,"723, Market Road",688153,+91 9011280598,coimbatore@retailmart.com,,2023-04-25,ACTIVE,2023-04-25,2024-01-11
-16,RetailMart Mega Store Bengaluru,Supermarket,South,Karnataka,Bengaluru,"998, Lake View Road",885884,+91 9232260256,bengaluru@retailmart.com,,2018-12-19,ACTIVE,2018-12-19,2020-10-01
-17,RetailMart Hyper New Delhi,Hypermarket,North,Delhi,New Delhi,"25, Commercial Street",517821,9541458685,newdelhi@retailmart.com,,2018-06-04,ACTIVE,2018-06-04,2021-05-08
-18,RetailMart Horizon Salem,Hypermarket,South,Tamil Nadu,Salem,"395, Lake View Road",299312,9406088356,salem@retailmart.com,,2021-10-19,ACTIVE,2021-10-19,2025-04-17
-19,RetailMart High Street New Delhi,Hypermarket,North,Delhi,New Delhi,"431, Market Road",810219,+91 9299468044,newdelhi@retailmart.com,,2021-03-20,ACTIVE,2021-03-20,2025-08-15
-20,RetailMart Horizon Bengaluru,Express Store,South,Karnataka,Bengaluru,"649, Lake View Road",451470,913 433 2003,bengaluru@retailmart.com,,2018-03-08,UNDER RENOVATION,2018-03-08,2018-12-31
+STR00001,RetailMart Signature Mumbai,Hypermarket,West,Maharashtra,Mumbai,"229, Park Street",872246,+91 9181960013,mumbai@retailmart.com,,2023-04-26,UNDER RENOVATION,2023-04-26,2023-06-19
+STR00002,RetailMart Lakeside Pune,Supermarket,West,Maharashtra,Pune,"285, Park Street",325772,9511615594,pune@retailmart.com,,2022-10-30,ACTIVE,2022-10-30,2025-11-01
+STR00003,RetailMart Metro Plaza Coimbatore,Hypermarket,South,Tamil Nadu,Coimbatore,"678, Commercial Street",910620,94131-64752,coimbatore@retailmart.com,,2022-11-25,ACTIVE,2022-11-25,2024-01-28
+STR00004,RetailMart Skyline Mysuru,Supermarket,South,Karnataka,Mysuru,"948, Airport Road",330283,95030-56413,mysuru@retailmart.com,,2020-03-08,ACTIVE,2020-03-08,2025-10-12
+STR00005,RetailMart One Salem,Supermarket,South,Tamil Nadu,Salem,"371, Commercial Street",245051,9871012269,salem@retailmart.com,,2025-01-25,ACTIVE,2025-01-25,2026-02-19
+STR00006,RetailMart Infinity Nagpur,Hypermarket,West,Maharashtra,Nagpur,"301, Market Road",265840,99999,nagpur@retailmart.com,,2023-08-15,ACTIVE,2023-08-15,2025-09-18
+STR00007,RetailMart Downtown Mumbai,Supermarket,West,Maharashtra,Mumbai,"246, MG Road",352572,+91 9911718227,mumbai@retailmart.com,,2025-06-02,ACTIVE,2025-06-02,2026-02-27
+STR00008,RetailMart Downtown Salem,Supermarket,South,Tamil Nadu,Salem,"922, Airport Road",573417,+91 9133150983,salem@retailmart.com,,2022-07-14,ACTIVE,2022-07-14,2022-12-06
+STR00009,RetailMart Mega Store Salem,Hypermarket,South,Tamil Nadu,Salem,"741, Lake View Road",704201,973 763 1165,salem@retailmart.com,,2017-05-27,ACTIVE,2017-05-27,2022-08-21
+STR00010,RetailMart Express Pune,Express Store,West,Maharashtra,Pune,"460, Park Street",542374,9247317810,pune@retailmart.com,,2017-02-23,ACTIVE,2017-02-23,2025-08-06
+STR00011,RetailMart Signature New Delhi,Supermarket,North,Delhi,New Delhi,"293, Market Road",830429,9872343098,newdelhi@retailmart.com,,2019-05-19,ACTIVE,2019-05-19,2020-01-08
+STR00012,RetailMart Metro Plaza Bengaluru,Express Store,South,Karnataka,Bengaluru,"883, Commercial Street",523389,91939-90916,bengaluru@retailmart.com,,2021-09-03,ACTIVE,2021-09-03,2022-10-26
+STR00013,RetailMart Prime Mumbai,Express Store,West,Maharashtra,Mumbai,"103, Station Road",663750,99999,mumbai@retailmart.com,,2020-02-21,ACTIVE,2020-02-21,2026-03-26
+STR00014,RetailMart High Street Chennai,Supermarket,South,Tamil Nadu,Chennai,"119, Station Road",878480,982 449 3534,invalid-email,,2025-07-12,ACTIVE,2025-07-12,2025-08-07
+STR00015,RetailMart Crown Coimbatore,Express Store,South,Tamil Nadu,Coimbatore,"723, Market Road",688153,+91 9011280598,coimbatore@retailmart.com,,2023-04-25,ACTIVE,2023-04-25,2024-01-11
+STR00016,RetailMart Mega Store Bengaluru,Supermarket,South,Karnataka,Bengaluru,"998, Lake View Road",885884,+91 9232260256,bengaluru@retailmart.com,,2018-12-19,ACTIVE,2018-12-19,2020-10-01
+STR00017,RetailMart Hyper New Delhi,Hypermarket,North,Delhi,New Delhi,"25, Commercial Street",517821,9541458685,newdelhi@retailmart.com,,2018-06-04,ACTIVE,2018-06-04,2021-05-08
+STR00018,RetailMart Horizon Salem,Hypermarket,South,Tamil Nadu,Salem,"395, Lake View Road",299312,9406088356,salem@retailmart.com,,2021-10-19,ACTIVE,2021-10-19,2025-04-17
+STR00019,RetailMart High Street New Delhi,Hypermarket,North,Delhi,New Delhi,"431, Market Road",810219,+91 9299468044,newdelhi@retailmart.com,,2021-03-20,ACTIVE,2021-03-20,2025-08-15
+STR00020,RetailMart Horizon Bengaluru,Express Store,South,Karnataka,Bengaluru,"649, Lake View Road",451470,913 433 2003,bengaluru@retailmart.com,,2018-03-08,UNDER RENOVATION,2018-03-08,2018-12-31

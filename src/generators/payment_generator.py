@@ -1,10 +1,3 @@
-"""
-==========================================================
-RetailMart Payment Generator
-Author : ChatGPT
-==========================================================
-"""
-
 import random
 
 import pandas as pd
@@ -155,7 +148,11 @@ class PaymentGenerator:
 
             record = {
 
-                "Payment ID": payment_id,
+                "Payment ID": CommonUtils.generate_id(
+                    "PAY",
+                    payment_id,
+                    6
+                ),
 
                 "Order ID": order["Order ID"],
 
